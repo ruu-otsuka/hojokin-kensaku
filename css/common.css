@@ -1,0 +1,237 @@
+/* common.css - 共通スタイル */
+
+/* リセットとベーススタイル */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fcfaf7;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ヘッダー */
+  .header {
+    background: linear-gradient(to right, #e67e22, #d35400);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .header-inner__logo a {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-inner__logo h2 {
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .header-inner__btn > div {
+    background: #c0392b;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header-inner__btn > div:hover {
+    background: #a93226;
+  }
+  
+  /* コンテナ */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* 見出し */
+  .section-title {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #e67e22;
+  }
+  
+  /* ボタン */
+  .btn {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background: #d35400;
+  }
+  
+  .btn-large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+  
+  .btn-action {
+    background: #3498db;
+  }
+  
+  .btn-action:hover {
+    background: #2980b9;
+  }
+  
+  /* セクション */
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-alt {
+    background-color: #f5f0e9;
+  }
+  
+  /* フッター */
+  footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo h3 {
+    color: white;
+    font-size: 1.3rem;
+  }
+  
+  .copy {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  
+  /* カード */
+  .card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-header {
+    padding: 20px;
+    background: #e67e22;
+    color: white;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* ユーティリティクラス */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .accent-color {
+    color: #e67e22;
+  }
+  
+  .required::after {
+    content: "必須";
+    background: #e74c3c;
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  /* レスポンシブ対応 */
+  .sp {
+    display: block;
+  }
+  
+  .pc {
+    display: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .sp {
+      display: none;
+    }
+    
+    .pc {
+      display: block;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+  }

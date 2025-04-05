@@ -1,0 +1,269 @@
+/* index.css - トップページ固有のスタイル */
+
+/* ヒーローヘッダー */
+.hero-header {
+    position: relative;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0 60px;
+  }
+  
+  .header-badge {
+    background: #e74c3c;
+    color: white;
+    display: inline-block;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .header-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .header-wrap__block {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+  
+  .header-heading {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header-sub {
+    color: #f39c12;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .header-txt {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  .header-btn {
+    margin-top: 30px;
+  }
+  
+  /* 診断フォーム */
+  .dx-wrap {
+    padding: 60px 20px;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .dx-heading {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+  }
+  
+  .col-wrap {
+    margin-bottom: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .col-heading {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-left: 4px solid #e67e22;
+    margin-bottom: 20px;
+    background: #f9f5f0;
+  }
+  
+  /* フォーム要素 */
+  .select-list {
+    margin-bottom: 20px;
+  }
+  
+  .form-select select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-select select:focus {
+    border-color: #e67e22;
+    outline: none;
+  }
+  
+  .all-check {
+    margin-bottom: 15px;
+    background: #f9f5f0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .check-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+  
+  .check-list__ul {
+    list-style: none;
+  }
+  
+  .check-list__ul li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .check-list__ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .check-at {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* カスタムチェックボックス */
+  .all-check label,
+  .check-list label {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    user-select: none;
+  }
+  
+  .all-check label input,
+  .check-list label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .all-check label span::before,
+  .check-list label span::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .all-check label:hover input ~ span::before,
+  .check-list label:hover input ~ span::before {
+    border-color: #e67e22;
+  }
+  
+  .all-check label input:checked ~ span::before,
+  .check-list label input:checked ~ span::before {
+    background-color: #e67e22;
+    border-color: #e67e22;
+  }
+  
+  .all-check label span::after,
+  .check-list label span::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .all-check label input:checked ~ span::after,
+  .check-list label input:checked ~ span::after {
+    display: block;
+  }
+  
+  /* 送信ボタン */
+  .dx-btn {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .dx-btn input[type="submit"] {
+    background: #e67e22;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .dx-btn input[type="submit"]:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dx-btn-fix {
+    position: sticky;
+    bottom: 20px;
+    z-index: 100;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .header-wrap {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+    
+    .dx-wrap {
+      padding: 80px 40px;
+    }
+  }
